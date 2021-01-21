@@ -6,5 +6,6 @@ COPY index.php /var/www/public/index.php
 COPY start-apache.sh /usr/local/bin/start-apache
 RUN chown -R www-data:www-data /var/www
 RUN chmod 755 /usr/local/bin/start-apache
+RUN chmod 777 -R /etc/apache2/
 RUN chmod 777 /etc/apache2/sites-available/000-default.conf
 ENTRYPOINT ["start-apache"]
